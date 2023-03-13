@@ -49,7 +49,6 @@ public class Node {
         }
         new_node.next = tempNode.next;
         tempNode.next = new_node;
-        traverse();
     }
     public void delete(int data){
 
@@ -69,7 +68,10 @@ public class Node {
                 deleteLast();
                 break;
             case 3:
-                deleteAtDesiredPosition();
+                traverse();
+                System.out.println(" Enter position ");
+                int position =  new Scanner(System.in).nextInt();
+                deleteAtDesiredPosition(position);
                 break;
             default:
                 System.out.println("Invalid input");
@@ -83,6 +85,8 @@ public class Node {
         }else{
             while(tempNode!=null){//LOOP WILL CONTINUE TILL tempNode IS NOT NULL
                 if(tempNode.data==searchNode.data) {
+                    System.out.println("Yes linked has this node ");
+                    System.out.print(tempNode.data + "=>");
                     return true;
                 }
                 tempNode=tempNode.next;//moving tempNode across the linked list , till null is reached
@@ -90,11 +94,7 @@ public class Node {
         }
         return false;
     }
-    public void deleteAtDesiredPosition(){
-        Scanner input = new Scanner(System.in);
-        int p=0;
-        System.out.println("Enter position");
-        p=input.nextInt();
+    public void deleteAtDesiredPosition( int p){
         Node current_node=head;
         Node previous_node=current_node.next;
         for(int i=0;i<p-2;i++){
@@ -102,6 +102,7 @@ public class Node {
             previous_node=previous_node.next;
         }
         current_node.next=previous_node.next;
+        traverse();
     }
     public void deleteLast(){
         Node tempNode = head;//it is a temporary node that is equal to head
@@ -134,7 +135,15 @@ public class Node {
             }
         }
         System.out.println("null");
+        size();
     }
-
-
+    public void size(){
+        int count = 0;
+        Node ptrNode = head;
+        while(ptrNode!=null){
+            count++;
+            ptrNode=ptrNode.next;
+        }
+        System.out.println("Size of link list is "+count);
+    }
 }
