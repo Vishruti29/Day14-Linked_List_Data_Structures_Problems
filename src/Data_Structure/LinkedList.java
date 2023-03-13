@@ -6,17 +6,17 @@ public class LinkedList {
         node.creation(56);
         node.append(70);
         node.traverse();
-        node.addAtDesiredPos(30,2);
+        node.addAtDesiredPos(30, 2);
         node.traverse();
-        boolean checkNode ;
+        boolean checkNode;
         checkNode = node.search(30);
-        if(checkNode){
-            System.out.println("Yes linked has this node  30=> ");
-        }
         checkNode = node.search(39);
-        if(!checkNode){
-            System.out.println("Linked list does not have this node\n");
+        if (!checkNode) {
+            System.out.println("\nLinked list does not have this node");
         }
-        node.addAtDesiredPos(40,3);
-        }
+        node.addAtDesiredPos(40, 3);
+        System.out.println("\nCase 9");
+        node.delete(40);
+
     }
+}
