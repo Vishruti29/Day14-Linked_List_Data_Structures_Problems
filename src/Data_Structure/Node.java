@@ -80,6 +80,18 @@ public class Node {
         System.out.println("Deleted successfully, Final ");
         traverse();
     }
+
+    public void deleteLast(){
+        Node tempNode = head;//it is a temporary node that is equal to head
+        Node pointerNode = tempNode.next;//it is a pointer node that points to next node address (has  address/next of temporary node)
+        while(pointerNode.next!=null){
+            tempNode=pointerNode;
+            pointerNode=pointerNode.next;
+        }
+        tempNode.next=null;
+        System.out.println("Deleted successfully, Final ");
+        traverse();
+    }
     public void traverse(){
         Node tempNode = head;//declaration and initialization a tempNode of type Node
         if(tempNode==null){
