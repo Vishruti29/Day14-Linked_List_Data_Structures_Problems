@@ -14,7 +14,7 @@ public class LinkedList {
         if (!checkNode) {
             System.out.println("\nLinked list does not have this node");
         }
-        node.addAtDesiredPos(40, 3);
+        node.addAtDesiredPos(40,3);
         System.out.println("\nCase 9");
         node.delete(40);
 
